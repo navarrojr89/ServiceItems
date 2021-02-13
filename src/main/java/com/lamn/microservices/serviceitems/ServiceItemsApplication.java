@@ -2,10 +2,12 @@ package com.lamn.microservices.serviceitems;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 
 /**
  * The type Service items application.
  */
+@EnableFeignClients
 @SpringBootApplication
 public class ServiceItemsApplication {
 

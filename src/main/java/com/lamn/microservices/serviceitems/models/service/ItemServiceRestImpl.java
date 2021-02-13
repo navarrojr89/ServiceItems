@@ -3,6 +3,7 @@ package com.lamn.microservices.serviceitems.models.service;
 import com.lamn.microservices.serviceitems.models.Item;
 import com.lamn.microservices.serviceitems.models.Product;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -16,8 +17,8 @@ import java.util.stream.Collectors;
 /**
  * The type Item service.
  */
-@Service
-public class ItemServiceImpl implements ItemService {
+@Service("itemServiceImpl")
+public class ItemServiceRestImpl implements ItemService {
 
     @Autowired
     private RestTemplate clientRest;
