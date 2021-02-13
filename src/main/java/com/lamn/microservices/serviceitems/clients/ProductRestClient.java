@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * The interface Product rest client.
  */
-@FeignClient(name = "lanm-service-product", url = "localhost:10001")
+@FeignClient(name = "lanm-service-product")
 public interface ProductRestClient {
 
     /**

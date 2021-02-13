@@ -11,6 +11,7 @@ public class Product {
     private String name;
     private Double price;
     private Date created;
+    private Integer port;
 
     /**
      * Gets id.
@@ -49,6 +50,15 @@ public class Product {
     }
 
     /**
+     * Gets port.
+     *
+     * @return the port
+     */
+    public Integer getPort() {
+        return port;
+    }
+
+    /**
      * Sets id.
      *
      * @param id the id
@@ -82,5 +92,14 @@ public class Product {
      */
     public void setCreated(Date created) {
         this.created = created;
+    }
+
+    /**
+     * Sets port.
+     *
+     * @param port the port
+     */
+    public void setPort(Integer port) {
+        this.port = port;
     }
 }
