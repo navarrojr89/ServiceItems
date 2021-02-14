@@ -1,7 +1,9 @@
 package com.lamn.microservices.serviceitems.controllers;
 
 import com.lamn.microservices.serviceitems.models.Item;
+import com.lamn.microservices.serviceitems.models.Product;
 import com.lamn.microservices.serviceitems.models.service.ItemService;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,9 +24,23 @@ public class ItemController {
         return itemService.findAll();
     }
 
+    @HystrixCommand(fallbackMethod = "getFallbackItem")
     @GetMapping("/items/{id}/count/{count}")
     public Item getItemDetail(@PathVariable Long id, @PathVariable Integer count) {
         return itemService.findById(id, count);
+    }
+
+    private Item getFallbackItem(Long id, Integer count) {
+        Product product = new Product();
+        product.setId(id);
+        product.setName("Not found product");
+        product.setPrice(0.0);
+
+        Item item = new Item();
+        item.setProduct(product);
+        item.setCount(count);
+
+        return item;
     }
 
 }
