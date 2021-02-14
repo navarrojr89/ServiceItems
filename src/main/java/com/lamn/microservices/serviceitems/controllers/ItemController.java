@@ -12,6 +12,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+/**
+ * The type Item controller.
+ */
 @RestController
 public class ItemController {
 
@@ -19,11 +22,23 @@ public class ItemController {
     @Qualifier("itemServiceFeign")
     private ItemService itemService;
 
+    /**
+     * Gets all items.
+     *
+     * @return the all items
+     */
     @GetMapping("/items")
     public List<Item> getAllItems() {
         return itemService.findAll();
     }
 
+    /**
+     * Gets item detail.
+     *
+     * @param id    the id
+     * @param count the count
+     * @return the item detail
+     */
     @HystrixCommand(fallbackMethod = "getFallbackItem")
     @GetMapping("/items/{id}/count/{count}")
     public Item getItemDetail(@PathVariable Long id, @PathVariable Integer count) {
