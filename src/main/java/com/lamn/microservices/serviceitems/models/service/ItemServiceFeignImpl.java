@@ -1,8 +1,8 @@
 package com.lamn.microservices.serviceitems.models.service;
 
+import com.lamn.microservices.appcommons.models.entity.Product;
 import com.lamn.microservices.serviceitems.clients.ProductRestClient;
 import com.lamn.microservices.serviceitems.models.Item;
-import com.lamn.microservices.serviceitems.models.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;

@@ -1,7 +1,7 @@
 package com.lamn.microservices.serviceitems.models.service;
 
+import com.lamn.microservices.appcommons.models.entity.Product;
 import com.lamn.microservices.serviceitems.models.Item;
-import com.lamn.microservices.serviceitems.models.Product;
 
 import java.util.List;
 

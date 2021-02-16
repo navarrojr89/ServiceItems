@@ -1,7 +1,7 @@
 package com.lamn.microservices.serviceitems.controllers;
 
+import com.lamn.microservices.appcommons.models.entity.Product;
 import com.lamn.microservices.serviceitems.models.Item;
-import com.lamn.microservices.serviceitems.models.Product;
 import com.lamn.microservices.serviceitems.models.service.ItemService;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.beans.factory.annotation.Autowired;

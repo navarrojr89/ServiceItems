@@ -1,6 +1,6 @@
 package com.lamn.microservices.serviceitems.clients;
 
-import com.lamn.microservices.serviceitems.models.Product;
+import com.lamn.microservices.appcommons.models.entity.Product;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;

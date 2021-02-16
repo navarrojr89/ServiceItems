@@ -1,5 +1,7 @@
 package com.lamn.microservices.serviceitems.models;
 
+import com.lamn.microservices.appcommons.models.entity.Product;
+
 /**
  * The type Item.
  */
