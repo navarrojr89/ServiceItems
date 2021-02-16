@@ -35,4 +35,19 @@ public class ItemServiceFeignImpl implements ItemService {
         Product product = productRestClient.getProduct(id);
         return product != null ? new Item(product, count) : null;
     }
+
+    @Override
+    public Product save(Product product) {
+        return productRestClient.createProduct(product);
+    }
+
+    @Override
+    public Product update(Product product, Long id) {
+        return productRestClient.updateProduct(product, id);
+    }
+
+    @Override
+    public void deleteById(Long id) {
+        productRestClient.deleteProduct(id);
+    }
 }
