@@ -11,11 +11,11 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 /**
  * The type Service items application.
  */
+@EnableAutoConfiguration(exclude = {DataSourceAutoConfiguration.class})
 @EnableCircuitBreaker
 @EnableEurekaClient
 @EnableFeignClients
 @SpringBootApplication
-@EnableAutoConfiguration(exclude = {DataSourceAutoConfiguration.class})
 public class ServiceItemsApplication {
 
     /**
